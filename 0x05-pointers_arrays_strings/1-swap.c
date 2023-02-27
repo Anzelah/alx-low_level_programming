@@ -5,14 +5,13 @@
  * @a: first value to be swapped
  * @b: second value to be swapped
  *
- * return: always (0)
 */
 
 void swap_int(int *a, int *b)
 {
-	int *a, *b;
-	*a = *b;
-	*b = *a;
+	int n;
 
-	return (0);
+	n = *a;
+	*a = *b;
+	*b = n;
 }
