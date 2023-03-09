@@ -37,5 +37,5 @@ int actual_prime_number(int n, int i)
 		return (0);
 	}
 	else
-		return (actual_prime_number(n, n - 1));
+		return (actual_prime_number(n, i - 1));
 }
