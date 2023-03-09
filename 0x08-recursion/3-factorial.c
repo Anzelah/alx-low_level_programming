@@ -11,8 +11,8 @@ int factorial(int n)
 {
 	if (n < 0)
 	{
-		return (-1);
+		_putchar(-1);
 	}
 	else
-		return (n * factorial(n - 1));
+		factorial(n * factorial(n - 1));
 }
