@@ -9,10 +9,13 @@
 
 int _sqrt_recursion(int n)
 {
+	if (n == 0)
+	{
+		return (1);
+	}
 	if (n)
 	{
-		_putchar(n);
-		_sqrt_recursion(n);
+		return (_sqrt_recursion(n));
 	}
 	else
 		return (-1);
