@@ -6,14 +6,14 @@
  * @argc: arguments supplied into the program
  * @argv: array of strings
  *
- * Return: (0)
+ * Return: number of arguments
  */
 
 int main(int argc, char *argv[])
 {
 	if (argv)
 	{
-		printf("%d\n", argc);
+		printf("%d\n", argc - 1);
 	}
 	return (0);
 }
