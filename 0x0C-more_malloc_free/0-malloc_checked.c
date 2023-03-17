@@ -20,9 +20,10 @@ void *malloc_checked(unsigned int b)
 	}
 
 	int i;
+
 	for (i = 0; i < b; i++)
 	{
-		arr[i] = i + 1;
+		arr[i] = i;
 	}
 	free(arr);
 
