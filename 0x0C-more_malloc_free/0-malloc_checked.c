@@ -12,20 +12,11 @@ void *malloc_checked(unsigned int b)
 {
 	int *arr;
 
-	arr = (int *) malloc(b * sizeof(int));
+	arr = (int *)malloc(b * sizeof(int));
 
 	if (arr == NULL)
 	{
-		return (NULL);
+		exit(98);
 	}
-
-	int i;
-
-	for (i = 0; i < b; i++)
-	{
-		arr[i] = b;
-
-		free(arr);
-	}
-	return (0);
+	return (arr);
 }
