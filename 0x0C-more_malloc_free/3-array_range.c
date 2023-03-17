@@ -13,7 +13,13 @@ int *array_range(int min, int max)
 {
 	int *arr;
 
-	arr =  (int *)malloc (sizeof(int) * ((max - min) + 1));
+	if (min > max)
+	{
+		return (NULL);
+	}
+	int range = (max - min) + 1;
+
+	arr =  (int *)malloc(range * sizeof(int));
 
 	if (arr == 0)
 	{
@@ -21,13 +27,10 @@ int *array_range(int min, int max)
 	}
 	int i;
 
-	for (i = 0; i <= max; i++)
+	for (i = 0; i <= range; i++)
 	{
 		arr[i] = i + 1;
-	}
-	if (min > max)
-	{
-		return (NULL);
+		min++;
 	}
 	return (arr);
 }
