@@ -12,25 +12,23 @@
 int *array_range(int min, int max)
 {
 	int *arr;
+	int range, i;
 
 	if (min > max)
 	{
 		return (NULL);
 	}
-	int range = (max - min) + 1;
+	range = (max - min) + 1;
 
-	arr =  (int *)malloc(range * sizeof(int));
+	arr = malloc(range * sizeof(int));
 
 	if (arr == NULL)
 	{
 		return (NULL);
 	}
-	int i;
-
 	for (i = 0; i <= range; i++)
 	{
-		arr[i] = min;
-		min++;
+		arr[i] = min++;
 	}
 	return (arr);
 }
