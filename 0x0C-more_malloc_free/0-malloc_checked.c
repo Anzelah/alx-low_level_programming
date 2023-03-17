@@ -23,7 +23,7 @@ void *malloc_checked(unsigned int b)
 
 	for (i = 0; i < b; i++)
 	{
-		arr[i] = i + 1;
+		arr[i] = b;
 
 		free(arr);
 	}
