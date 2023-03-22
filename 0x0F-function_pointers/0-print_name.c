@@ -11,7 +11,7 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	while (f == NULL && name == NULL)
+	while (name == NULL && f == NULL)
 		return;
 
 	f(name);
