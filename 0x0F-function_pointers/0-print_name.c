@@ -11,11 +11,10 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	char ch;
+	char *ch;
 
-	while (ch != '\0')
+	while (*ch != '\0')
 	{
-		_putchar (ch++);
-		_putchar ('\n');
+		_putchar (*ch++);
 	}
 }
