@@ -11,8 +11,6 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	while (*name != '\0')
-	{
-		_putchar (*name++);
-	}
+	while (f == NULL && name == NULL)
+		f(name);
 }
