@@ -7,8 +7,6 @@
  * @array: pointer to integer called array
  * @size: size of the array integer
  * @action: pointer to a funcion returning nothing
- *
- * Return: nothing
  */
 
 void array_iterator(int *array, size_t size, void (*action)(int))
@@ -18,8 +16,11 @@ void array_iterator(int *array, size_t size, void (*action)(int))
 
 	int i;
 
-	for (i = 0; i < size; i++)
+	while (size > 0)
 	{
-		action(array[i]);
+		for (i = 0; i < size; i++)
+		{
+			action(array[i]);
+		}
 	}
 }
