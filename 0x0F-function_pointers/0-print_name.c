@@ -11,10 +11,8 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	char *ch;
-
-	while (*ch != '\0')
+	while (*name != '\0')
 	{
-		_putchar (*ch++);
+		_putchar (*name++);
 	}
 }
