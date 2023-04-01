@@ -1,19 +1,17 @@
-#include "main.h"
-#include <stdio.h>
+#include "dog.h"
+#include <stdlib.h>
 
 /**
  * free_dog - free allocated memory for dogs
  * @d: pointer to structure
- * Return: void
  */
 
 void free_dog(dog_t *d)
 {
-	if (d != NULL)
+	if (d)
 	{
-		free (d->name);
-		free (d->owner);
-		free (d);
+		free(d->name);
+		free(d->owner);
+		free(d);
 	}
-	return (0);
 }
