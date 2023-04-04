@@ -4,8 +4,8 @@
 #include "lists.h"
 
 /**
- * add_nodeint - add node at the beginning
- * @h: pointer to list
+ * add_nodeint - dd node at the beginning
+ * @head: pointer to list
  * @n: elements inside the node
  *
  * Return: address of new element, NULL if it fails
@@ -23,5 +23,5 @@ listint_t *add_nodeint(listint_t **head, const int n)
 	new_node->next = (*head);
 	(*head) = new_node;
 
-	return (*head);
+	return (new_node);
 }
