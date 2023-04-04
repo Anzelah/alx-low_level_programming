@@ -1,6 +1,6 @@
-#include "dog.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "dog.h"
 
 /**
  * _strlen - first find the length of the string
@@ -58,8 +58,8 @@ char *_strcpy(char *dest, char *src)
 
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	int length1, length2;
 	dog_t *dog;
+	int length1, length2;
 
 	length1 = _strlen(name);
 	length2 = _strlen(owner); /* initialize variables */
