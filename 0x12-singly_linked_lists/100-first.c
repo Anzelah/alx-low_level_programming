@@ -1,9 +1,9 @@
 #include <stdio.h>
 
-void print() __attribute__((constructor));
+void print(void) __attribute__((constructor));
 
 /**
- * main - entry point
+ * print - entry point
  *
  * Return: always (0)
  */
