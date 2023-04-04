@@ -8,4 +8,4 @@ main:
         mov eax, 1
         ret
 
-fmt:    db 'Hello, Holberton', 0xA, 0
+fmt:    db "Hello, Holberton", 0xa, 0
