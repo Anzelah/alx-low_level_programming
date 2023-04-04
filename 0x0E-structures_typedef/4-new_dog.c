@@ -59,33 +59,31 @@ char *_strcpy(char *dest, char *src)
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *dog;
-	int length1, length2;
+	int len1, len2;
 
-	length1 = _strlen(name);
-	length2 = _strlen(owner); /* initialize variables */
+	len1 = _strlen(name);
+	len2 = _strlen(owner); /* initialize variables */
 
 	dog = malloc(sizeof(dog_t)); /* allocate memory */
 	if (dog == NULL)
 		return (NULL);
 
-	dog->name = malloc(sizeof(char) * (length1 + 1)); /* allocate memory */
+	dog->name = malloc(sizeof(char) * (len1 + 1)); /* allocate memory */
 	if (dog->name == NULL)
 	{
 		free(dog);
 		return (NULL);
 	}
-	dog->owner = malloc(sizeof(char) * (length2 + 1)); /* allocate memory */
+	dog->owner = malloc(sizeof(char) * (len2 + 1)); /* allocate memory */
 	if (dog->owner == NULL)
 	{
 		free(dog);
 		free(dog->name); /* free memory */
 		return (NULL);
 	}
-
 	_strcpy(dog->name, name); /* copy new dog name */
 	_strcpy(dog->owner, owner); /* similar to above but for owner */
 	dog->age = age;
-	free(dog->owner);
 
 	return (dog);
 }
