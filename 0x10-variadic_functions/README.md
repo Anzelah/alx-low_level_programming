@@ -1,1 +1,0 @@
-variadic fucntions and const
