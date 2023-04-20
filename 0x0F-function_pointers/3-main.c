@@ -11,4 +11,14 @@
 
 int main(void)
 {
+	int ch;
+        char *s;
+
+        ch = atoi(s);
+
+        if (ch > 2)
+        {
+                printf("Error\n");
+                exit(98);
+        }
 }
