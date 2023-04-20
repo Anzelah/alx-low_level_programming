@@ -11,16 +11,4 @@
 
 int main(void)
 {
-	int (*get_op_func(char *s))(int, int);
-
-	int ch;
-	char *s;
-
-	ch = atoi(s);
-
-	if (ch > 2)
-	{
-		printf("Error\n");
-		exit(98);
-	}
 }
