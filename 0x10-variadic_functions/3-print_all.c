@@ -13,7 +13,7 @@ void print_all(const char * const format, ...)
 {
 	int i = 0;
 	char *str;
-	char *sep = ", ";
+	const char *sep = ", ";
 
 	va_list list;
 
@@ -38,9 +38,6 @@ void print_all(const char * const format, ...)
 					str = "(nil)";
 				printf("%s", str);
 				break;
-			default:
-				i++;
-				continue;
 		}
 		i++;
 	}
