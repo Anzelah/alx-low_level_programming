@@ -29,5 +29,5 @@ list_t *add_node(list_t **head, const char *str)
 	if (!new_node)
 		return (NULL);
 	else
-		return (new_node);
+		return (*head);
 }
