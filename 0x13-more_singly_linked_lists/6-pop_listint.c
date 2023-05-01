@@ -15,17 +15,14 @@ int pop_listint(listint_t **head)
 	int data;
 	listint_t *temp; /* variable to hold head node */
 
-	if (head == NULL || *head == NULL) /* check if list or head pointer is empty */
+	if (*head == NULL) /* check if list is empty */
 		return (0);
 
-	data = (*head)->n;
+	data = (*head)->n; /* retrieve first node's value */
 
-	while (*head != NULL)
-	{
-		temp = *head; /* access first node in the list */
-		*head = (*head)->next; /* move head pointer to point to the next node */
-		free(temp); /* free memory allocated to first node */
-	}
+	temp = *head; /* access first node in the list */
+	*head = (*head)->next; /* move head pointer to point to the next node */
+	free(temp); /* free memory allocated to first node */
 
 	return (data);
 }
