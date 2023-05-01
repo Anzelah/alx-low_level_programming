@@ -12,10 +12,13 @@
 
 int pop_listint(listint_t **head)
 {
+	int data;
 	listint_t *temp; /* variable to hold head node */
 
 	if (head == NULL || *head == NULL) /* check if list or head pointer is empty */
 		return (0);
+
+	data = (*head)->n;
 
 	while (*head != NULL)
 	{
@@ -24,5 +27,5 @@ int pop_listint(listint_t **head)
 		free(temp); /* free memory allocated to first node */
 	}
 
-	return ((*head)->n);
+	return (data);
 }
