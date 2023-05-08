@@ -15,23 +15,23 @@ ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buffer = malloc(letters);
 	FILE *fp;
-	char *ch;
-	ssize_t bts = 0; /* number of bytes read */
+	ssize_t bts = 0; /* contains number of characters read */
 
 	fp = fopen(filename, "r");
 
 	if (fp == NULL || filename == NULL)
 		return (0);
 
-	ch = fgets(buffer, letters, fp);
+	/* reads data then stores it in the bts variable */
+	bts = fread(buffer, sizeof(char), letters, fp);
 
-	if (ch != NULL)
+	if (bts > 0)
 	{
 		write(STDOUT_FILENO, buffer, bts);
 	}
-	
+
 	fclose(fp);
 	free(buffer);
 
-	return(bts);
+	return (bts);
 }
