@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include <fcntl.h>
 #include "main.h"
 
 /**
@@ -14,23 +15,23 @@
 ssize_t read_textfile(const char *filename, size_t letters)
 {
 	char *buffer = malloc(sizeof(char) * letters);
-	FILE *fp;
+	int fd;
 	ssize_t bts = 0; /* contains number of characters read */
 
-	fp = fopen(filename, "r");
+	fd = open(filename, O_RDONLY);
 
-	if (fp == NULL || filename == NULL)
+	if (fd == -1 || filename == NULL)
 		return (0);
 
 	/* reads data then stores it in the bts variable */
-	bts = fread(buffer, sizeof(char), letters, fp);
+	bts = read(fd, buffer, letters);
 
 	if (bts > 0)
 	{
 		write(STDOUT_FILENO, buffer, bts);
 	}
 
-	fclose(fp);
+	close(fd);
 	free(buffer);
 
 	return (bts);
