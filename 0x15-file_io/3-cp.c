@@ -17,7 +17,10 @@ int main(int argc, char *argv[])
 	char *buffer = malloc(sizeof(char) * 1024);
 
 	if (buffer == NULL)
-		return (-1);
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", (argv[2]));
+                exit(99);
+	}
 
 	if (argc != 3)
 	{
