@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	close(fd);
 
 	fp = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	brts = write(fd, buffer, bts);
+	brts = write(fp, buffer, bts);
 
 	if (fp == -1 || brts == -1)
 	{
@@ -49,7 +49,6 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (fp));
 		exit(100);
 	}
-	close(fp);
 	free(buffer);
 	return (0);
 }
