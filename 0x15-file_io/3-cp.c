@@ -44,6 +44,11 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
+	while (bts > 0)
+	{
+		open(argv[2], O_WRONLY | O_APPEND);
+	}
+	
 	if (close(fp) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (fp));
