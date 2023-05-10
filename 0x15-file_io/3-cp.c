@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int fd, fp;
-	int brts = 0, bts = 0;
+	int brts, bts;
 	char *buffer = malloc(sizeof(char) * 1024);
 
 	if (buffer == NULL)
@@ -36,6 +36,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
+	return (bts);
 	close(fd);
 
 	fp = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
@@ -46,6 +47,7 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", (argv[2]));
 		exit(99);
 	}
+	return (brts);
 
 	if (close(fp) == -1)
 	{
