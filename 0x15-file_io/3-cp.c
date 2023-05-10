@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int fd, fp;
-	int brts, bts;
+	ssize_t brts, bts;
 	char *buffer = malloc(sizeof(char) * 1024);
 
 	if (buffer == NULL)
