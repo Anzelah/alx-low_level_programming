@@ -13,7 +13,7 @@
 int main(int argc, char *argv[])
 {
 	int fd, fp;
-	ssize_t brts, bts;
+	ssize_t brts = 0, bts;
 	char *buffer = malloc(sizeof(char) * 1024);
 
 	if (buffer == NULL)
@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 	fd = open(argv[1], O_RDONLY);
 	bts = read(fd, buffer, 1024);
 
-	if (fd == -1 || bts == -1)
+	if (fd == -1 || brts < bts || bts == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
@@ -44,11 +44,6 @@ int main(int argc, char *argv[])
 		exit(99);
 	}
 
-	while (bts > 0)
-	{
-		open(argv[2], O_WRONLY | O_APPEND);
-	}
-	
 	if (close(fp) == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", (fp));
