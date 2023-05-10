@@ -35,15 +35,12 @@ int main(int argc, char *argv[])
 	}
 
 	fp = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-
-	while (bts > 0)
+	brts = write(fp, buffer, bts);
+	
+	if (fp == -1 || brts == -1)
 	{
-		brts = write(fp, buffer, bts);
-		if (fp == -1 || brts < bts)
-		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", (argv[2]));
-			exit(99);
-		}
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", (argv[2]));
+		exit(99);
 	}
 
 	if (close(fp) == -1 || close(fd) == -1)
