@@ -15,12 +15,11 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 	unsigned long int current;
 	unsigned long int s = n ^ m;
 
-	while (i >= 0)
+	for (i = 63; i >= 0; i--)
 	{
 		current = s >> i;
 		if (current & 1)
 			index++;
-		i--;
 	}
 	return (index);
 }
