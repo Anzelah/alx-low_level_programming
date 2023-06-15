@@ -20,24 +20,35 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 		return (NULL);
 
 	newnode->n = n;
-	if (*h == NULL)
+	if (*h == NULL) /* if lnked list is empty */
 	{
 		newnode->next = NULL;
 		newnode->prev = NULL;
 		*h = newnode;
-
 		return (newnode);
 	}
-	for (i = 0; i < idx; i++)
+	if (idx == 0)/* if new_node need to be added at the beginning */
+	{
+		newnode->next = *h;
+		newnode->prev = NULL;
+		(*h)->prev = newnode;
+		*h = newnode;
+		return (newnode);
+	}
+	for (i = 0; i < idx - 1; i++)
 	{
 		temp = temp->next;
 		if (temp == NULL)
+		{
+			free(newnode);
 			return (NULL);
+		}
 	}
 	newnode->next = temp->next;
 	newnode->prev = temp;
 	temp->next = newnode;
-	temp->next->prev = newnode;
+	if (newnode->next != NULL)
+		temp->next->prev = newnode;
 
 	return (newnode);
 }
