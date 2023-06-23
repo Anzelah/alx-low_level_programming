@@ -1,24 +1,51 @@
-#include <stdio.h>
 #include "calc.h"
 
 /**
- * op - math operation
- * @a: first integer
- * @b: second integer
+ * add - perform addition
  *
  * Return: an integer
  */
-
-int calculator(char op, int a, int b)
+int add(int a, int b)
 {
-	if (op == '+')
-		return (a + b);
-	if (op == '-')
-                return (a - b);
-	if (op == '*')
-                return (a * b);
-	if (op == '/')
-                return (a / b);
-	if (op == '%')
-                return (a % b);
+	return (a + b);
+}
+
+/**
+ * sub - perform subtraction
+ *
+ * Return: an integer
+ */
+int sub(int a, int b)
+{
+	return (a - b);
+}
+
+/**
+ * mul - perform division
+ *
+ * Return: an integer
+ */
+int mul(int a, int b)
+{
+	return (a * b);
+}
+
+/**
+ * div - perform division
+ *
+ * Return: an integer
+ */
+int div(int a, int b)
+{
+	return (a / b);
+}
+
+/**
+ * mod - perform modulo
+ *
+ * Return: an integer
+ */
+int mod(int a, int b)
+{
+	return (a % b);
 }
