@@ -4,13 +4,13 @@ OBJ=%.o
 NAME=school
 
 
-all: school
+all: $(NAME)
 
-school: $(OBJ)
-        $(CC) $< -o school
+school: $%
+	$(CC) $< -o $(NAME)
 
-$(OBJ): $(SRC)
-        $(CC) -c $<
+%.o: $(SRC)
+	$(CC) -c $<
 
 clean:
 	rm -rf *.o
