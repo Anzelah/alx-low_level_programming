@@ -5,8 +5,10 @@ NAME=school
 CFLAGS=-Wall -Werror -Wextra -pedantic
 .PHONY: clean oclean fclean re all
 
-all: m.h $(OBJ)
-        $(CC) $(OBJ) -o $(NAME)
+COMPILER_FLAGS = $(CFLAGS)
+
+all: $(OBJ) m.h
+        $(CC) $(COMPILER_FLAGS) $(OBJ) -o $(NAME)
 
 clean:
 	$(RM) *~ $(NAME)
@@ -15,5 +17,4 @@ oclean:
 	$(RM) $(OBJ)
 
 fclean:clean oclean
-
 re:oclean all
