@@ -9,7 +9,7 @@ all: $(NAME)
 school: $%
 	$(CC) $< -o $(NAME)
 
-%.o: $(SRC)
+$(OBJ): $(SRC)
 	$(CC) -c $<
 
 clean:
