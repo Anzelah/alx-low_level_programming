@@ -1,0 +1,16 @@
+CC=gcc
+SRC=%.c
+OBJ=%.o
+NAME=school
+
+
+all: school
+
+school: $(OBJ)
+        $(CC) $< -o school
+
+$(OBJ): $(SRC)
+        $(CC) -c $<
+
+clean:
+	rm -rf *.o
