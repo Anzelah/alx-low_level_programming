@@ -6,7 +6,7 @@ NAME=school
 
 all: $(NAME)
 
-school: $%
+$(NAME): $%
 	$(CC) $< -o $(NAME)
 
 $(OBJ): $(SRC)
