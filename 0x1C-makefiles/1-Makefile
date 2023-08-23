@@ -4,12 +4,9 @@ SRC=*.c
 all: school
 
 school: main.o school.o
-	$(CC) main.o school.o -o school
+	$(CC) *.o -o school
 
-main.o: main.c
-	$(CC) -c $(SRC)
-
-school.o: school.c
+%.o: %.SRC
 	$(CC) -c $(SRC)
 
 clean:
