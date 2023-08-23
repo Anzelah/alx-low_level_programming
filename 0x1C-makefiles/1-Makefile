@@ -1,13 +1,13 @@
 CC=gcc
-SRC=*.c
+SRC=%.c
 
 all: school
 
 school: main.o school.o
-	$(CC) *.o -o school
+	$(CC) main.o school.o -o school
 
-%.o: %.SRC
-	$(CC) -c $(SRC)
+%.o: $(SRC)
+	$(CC) -c $<
 
 clean:
 	rm -rf *.o
