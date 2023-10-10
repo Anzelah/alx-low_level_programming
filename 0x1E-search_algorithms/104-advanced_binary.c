@@ -1,7 +1,7 @@
 #include "search_algos.h"
 
 /**
- * advanced_binary - search a value in sorted array withbinary search algorithms
+ * advanced_binary - search value in sorted array withbinary search algorithms
  * @array: pointer to the first element of the array to search in
  * @size: number of elements in array
  * @value: value to search for
@@ -48,7 +48,7 @@ int advanced_binary(int *array, size_t size, int value)
 		{
 			left = mid + 1;
 		}
-	
+
 	}
 	return (first);
 }
